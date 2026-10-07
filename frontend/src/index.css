@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, sans-serif;
+  --color-bg: #070b14;
+  --color-panel: #0d1424;
+  --color-line: #1c2740;
+  --color-mute: #8b9bb8;
+}
+body { background: radial-gradient(1200px 500px at 70% -10%, #12234a55, transparent), #070b14; color: #e8eefb; font-family: var(--font-sans); }
+.card { background: var(--color-panel); border: 1px solid var(--color-line); border-radius: 18px; }
+.rise { animation: rise .55s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+.risk-high { animation: glow 1.6s ease-in-out infinite; }
+@keyframes glow { 0%,100% { box-shadow: 0 0 0 0 #ef444400, inset 0 0 0 1px #ef444455; } 50% { box-shadow: 0 0 40px 2px #ef444433, inset 0 0 0 1px #ef4444cc; } }
+.blink { animation: blink 1.2s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: .45; } }
+@media (prefers-reduced-motion: reduce) { .rise, .risk-high, .blink { animation: none; } }
+input:focus-visible, button:focus-visible { outline: 2px solid #5b8cff; outline-offset: 2px; }
